@@ -21,6 +21,15 @@ const config: HardhatUserConfig = {
 					},
 				},
 			},
+			{
+				version: '0.6.12',
+				settings: {
+					optimizer: {
+						enabled: true,
+						runs: 1000000,
+					},
+				},
+			},
 		],
 	},
 	namedAccounts: {
@@ -58,6 +67,14 @@ const config: HardhatUserConfig = {
 		goerli: {
 			url: node_url('goerli'),
 			accounts: accounts('goerli'),
+		},
+		fuse: {
+			url: node_url('fuse'),
+			accounts: accounts('fuse'),
+		},
+		spark: {
+			url: node_url('spark'),
+			accounts: accounts('fuse'),
 		},
 	}),
 	paths: {
