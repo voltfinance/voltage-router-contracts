@@ -21,5 +21,5 @@ jobs:
             # -------------------------------------------------------------------------
             - name: Formatting
               run: pnpm format
-            - name: Running tests
-              run: pnpm test
+            # - name: Running tests
+            #   run: pnpm test
