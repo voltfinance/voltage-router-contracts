@@ -7,11 +7,12 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
 	const {deployer} = await getNamedAccounts();
 
-	await deploy('ERC20BridgeSampler', {
+	await deploy('FullMigration', {
 		from: deployer,
 		log: true,
+		args: [deployer],
 		autoMine: true, // speed up deployment on local network (ganache, hardhat), no effect on live networks
 	});
 };
 export default func;
-func.tags = ['SimpleERC20'];
+func.tags = ['FullMigration'];
