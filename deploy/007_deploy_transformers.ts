@@ -4,7 +4,7 @@ import {DeployFunction} from 'hardhat-deploy/types';
 const {WFUSE_ADDRESS} = process.env;
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-	const {deployments, getNamedAccounts, ethers} = hre;
+	const {deployments, getNamedAccounts} = hre;
 	const {deploy, get} = deployments;
 	const {deployer} = await getNamedAccounts();
 

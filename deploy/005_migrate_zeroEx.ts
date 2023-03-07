@@ -34,6 +34,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	console.log('Migrated ZeroEx', tx.hash);
 	console.log({deployer, zeroExAddress, features, migratorOpts});
 
+	await tx.wait();
+	console.log('Tx Mined at', tx.blockNumber);
+
 	console.log('flashwallet', await zeroEx.getTransformWallet());
 };
 export default func;
