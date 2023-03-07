@@ -3,7 +3,7 @@ import {DeployFunction} from 'hardhat-deploy/types';
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	const {deployments, getNamedAccounts, ethers} = hre;
-	const {deploy, get} = deployments;
+	const {get} = deployments;
 	const {deployer} = await getNamedAccounts();
 
 	const {address: migratorAddress} = await get('FullMigration');
