@@ -5,8 +5,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	const {deployments, getNamedAccounts, ethers} = hre;
 	const {deploy, get} = deployments;
 
-	const migratorAddress = await get('FullMigration');
-	const migrator = await ethers.getContractAt('FullMigration', migratorAddress.address);
+	const {address: migratorAddress} = await get('FullMigration');
+	const migrator = await ethers.getContractAt('FullMigration', migratorAddress);
 
 	const {deployer} = await getNamedAccounts();
 

@@ -12,6 +12,18 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
 	const {address: zeroExAddress} = await get('ZeroEx');
 
+	await deploy('SimpleFunctionRegistryFeature', {
+		from: deployer,
+		log: true,
+		autoMine: true,
+	});
+
+	await deploy('OwnableFeature', {
+		from: deployer,
+		log: true,
+		autoMine: true,
+	});
+
 	await deploy('TransformERC20Feature', {
 		from: deployer,
 		log: true,
