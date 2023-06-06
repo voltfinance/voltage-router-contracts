@@ -8,8 +8,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	const {deploy, get} = deployments;
 	const {deployer} = await getNamedAccounts();
 
-	const {address: zeroExAddress} = await get('ZeroEx');
-
 	const {address: bridgeAdapter} = await get('BridgeAdapter');
 
 	await deploy('WethTransformer', {
@@ -25,25 +23,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		autoMine: true,
 	});
 
-	await deploy('AffiliateFeeTransformer', {
-		from: deployer,
-		log: true,
-		autoMine: true,
-	});
-
 	await deploy('FillQuoteTransformer', {
 		from: deployer,
 		log: true,
-		args: [bridgeAdapter, zeroExAddress],
-		autoMine: true,
-	});
-
-	await deploy('PositiveSlippageFeeTransformer', {
-		from: deployer,
-		log: true,
+		args: [bridgeAdapter],
 		autoMine: true,
 	});
 };
 export default func;
 func.tags = ['Transformers'];
-func.dependencies = ['ZeroExMigrated', 'BridgeAdapter'];
+func.dependencies = ['RouterMigrated', 'BridgeAdapter'];

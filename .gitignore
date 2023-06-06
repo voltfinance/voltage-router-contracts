@@ -20,3 +20,8 @@ deployments/hardhat
 deployments/localhost
 
 /.dapp
+
+/.yarn
+.yarnrc.yml
+
+.DS_Store

@@ -22,7 +22,6 @@ pragma experimental ABIEncoderV2;
 
 import "./CurveSampler.sol";
 import "./MStableSampler.sol";
-import "./NativeOrderSampler.sol";
 import "./TwoHopSampler.sol";
 import "./UniswapSampler.sol";
 import "./UniswapV2Sampler.sol";
@@ -32,7 +31,6 @@ import "./UtilitySampler.sol";
 contract ERC20BridgeSampler is
     CurveSampler,
     MStableSampler,
-    NativeOrderSampler,
     TwoHopSampler,
     UniswapSampler,
     UniswapV2Sampler,
